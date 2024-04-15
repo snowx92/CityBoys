@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: #f0f0f0;
   height: max-content;
+  
 }
 
 @font-face {
@@ -15,7 +16,11 @@ body {
 a {
   text-decoration: none;
 }
-
+.ffl{
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+}
 .branding {
   text-align: center !important;
   font-family: brand, Arial, sans-serif !important;
@@ -108,6 +113,13 @@ a {
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 40px;
+  }
+  #pad{
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+  }
+  .smal{
+    font-size: 20px !important;
   }
 }
 
@@ -214,8 +226,8 @@ padding: 0px;
 
 .footer {
   background: #000000;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .single_footer {
@@ -459,6 +471,9 @@ button {
 @media(max-width: 430px){
   .branding .text-wrapper{
     font-size: 60px;
+  }
+  .smal span{
+    font-size: 40px !important;
   }
 }
 
