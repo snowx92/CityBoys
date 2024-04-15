@@ -25,7 +25,7 @@ a {
   text-align: center !important;
   font-family: brand, Arial, sans-serif !important;
   color: hsl(0, 0%, 0%) !important;
-  font-size: 150px;
+  font-size: 100px;
   background-color: #ff5114;
   display: inline-block;
   /* Ensures each letter is animated individually */
@@ -109,10 +109,10 @@ a {
     max-width: 50%;
   }
   .branding {
-    font-size: 75px;
+    font-size: 50px;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
   }
   #pad{
     padding-left: 1px !important;
@@ -488,7 +488,7 @@ button {
 } */
 
   .branding {
-    font-size: 100px;
+    font-size: 75px;
     width: max-content;
   }
 }
