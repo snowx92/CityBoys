@@ -24,12 +24,13 @@ a {
 .branding {
   text-align: center !important;
   font-family: brand, Arial, sans-serif !important;
-  color: hsl(0, 0%, 0%) !important;
+  color: #ff5114 !important;
   font-size: 100px;
-  background-color: #ff5114;
+  background-color: #000000;
   display: inline-block;
   /* Ensures each letter is animated individually */
   overflow: hidden;
+  
   /* Ensures text doesn't overflow container */
 }
 

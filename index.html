@@ -14,22 +14,23 @@
 
 <body>
     <nav class="navbar navbar-dark bg-black w-100">
-        <div class="container-fluid ps-4 pe-5">
-            <a href="index.html">
-                <img class=" logo " src="./logo city.gif " alt="">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand mx-auto" href="index.html"> <!-- mx-auto to center the logo -->
+                <img class="logo" src="./logo city.gif" alt="">
             </a>
-
+    
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                aria-label="Toggle navigation">
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+    
+            <!-- Offcanvas menu content -->
             <div class="offcanvas offcanvas-end text-bg-dark bg-black" tabindex="-1" id="offcanvasDarkNavbar"
                 aria-labelledby="offcanvasDarkNavbarLabel">
                 <div class="offcanvas-header">
-                    <img class="img-fluid w-25" src="./logo city.gif" alt=""> <button type="button"
-                        class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <img class="img-fluid w-25" src="./logo city.gif" alt="">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -49,14 +50,15 @@
                 </div>
             </div>
         </div>
-
     </nav>
-    <h1 class="branding  w-100 pt-5">
+    
+    <h1 id="text1" class="branding w-100 pt-5">
         <span class="text-wrapper">
-            <span class="letters">Welcome To The <br> City !!</span>
-            <span class="line"></span>
+          <span class="letters">Welcome To The <br> City !!</span>
+          <span class="line"></span>
         </span>
-    </h1>
+      </h1>
+    
 
     <div class="container-fluid justify-content-center pt-5 pb-5 top w-100 ">
 
@@ -70,6 +72,7 @@
             <div class="column">
                 <img src="./hero/3.jpeg">
                 <img src="./hero/1.jpeg">
+                <img src="./hero/5.jpeg">
             </div>
 
             <div class="column">
@@ -81,18 +84,10 @@
                 <img src="./hero/8.jpeg">
             </div>
         </div>
-        <a href="" style="color: #ff5114;"><i class=" pt-4 fa-brands fa-instagram fa-bounce fa-2xl"
-                style="color: #000000;"></i>
-            <h4 class="fs-2 text">Instagram</h4>
-        </a>
+
     </div>
 
-    <p id="pad" class="branding  w-100 pt-2 smal">
-        <span class="text-wrapper">
-            <span class="letters  ">We Are a Bunch Of Creative  / Artist & Prodection Nerds</span>
-            <span class="line"></span>
-        </span>
-    </p>
+
 
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 text-center">
@@ -174,7 +169,7 @@
                 </div><!--- END COL -->
                 <div class="col-md-4 col-sm-4 col-xs-6">
                     <div class="single_footer single_footer_address">
-                        <h4>Quick Link</h4>
+                        <h4>Quick Links</h4>
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="Gigs.html">Gigs</a></li>
