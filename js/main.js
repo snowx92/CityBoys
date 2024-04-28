@@ -1,7 +1,7 @@
     // Define the text for each branding element
     var textList = [
       "Welcome To The  City !!",
-      "We Are a Bunch Of Creatives  / Artists & Production Nerds"
+      
     ];
 
     // Initialize index for textList
