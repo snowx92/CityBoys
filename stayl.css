@@ -14,7 +14,36 @@ h4{
   src: url("font.ttf") format("truetype");
   /* Relative path to your font file */
 }
+@font-face {
+  font-family: b_bold;
+  /* Name your font */
+  src: url("Teko-Bold.ttf") format("truetype");
+  /* Relative path to your font file */
+}
+@font-face {
+  font-family: b_med;
+  /* Name your font */
+  src: url("Teko-Medium.ttf") format("truetype");
+  /* Relative path to your font file */
+}
+@font-face {
+  font-family: b_reg;
+  /* Name your font */
+  src: url("Teko-Regular.ttf") format("truetype");
+  /* Relative path to your font file */
+}
+.bold{
+  font-family: b_bold, Arial, sans-serif !important;
 
+}
+.med{
+  font-family: b_med, Arial, sans-serif !important;
+
+}
+.reg{
+  font-family: b_reg, Arial, sans-serif !important;
+
+}
 a {
   text-decoration: none;
 }
@@ -25,7 +54,7 @@ a {
 }
 .branding {
   text-align: center !important;
-  font-family: brand, Arial, sans-serif !important;
+  font-family: b_bold, Arial, sans-serif !important;
   color: #ff5114 !important;
   font-size: 100px;
   background-color: #000000;
@@ -231,7 +260,7 @@ padding: 0px;
 
 .branding-text {
   font-family: "Arial", sans-serif;
-  color: #333;
+  color: #5f5f5f;
   font-weight: 700;
   line-height: 1.6;
   font-size: 1.5em;
@@ -336,7 +365,7 @@ padding: 0px;
   background-position: 100% 100%;
 }
 .footer-logo img {
-  max-width: 300px;
+  max-width: 200px;
 }
 .footer-text p {
   margin-bottom: 14px;
@@ -560,4 +589,216 @@ padding: 0px;
 .color li a:hover{
   color: #ff5114 !important;
   text-decoration: underline  ;
+}
+contactForm {
+    width: calc(100% - 20px);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* STYLES FOR FORM */
+.contactForm form {
+    width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    padding-top: 20px;
+}
+
+.inputGroup {
+    width: 100%;
+    position: relative;
+}
+
+  .inputGroup1 {
+      grid-column: 1;
+      grid-row: 1;
+  }
+  .inputGroup2 {
+      grid-column: 2;
+      grid-row: 1;
+  }
+  .inputGroup3 {
+      grid-column: 1;
+      grid-row: 2;
+  }
+  .inputGroup4 {
+      grid-column: 2;
+      grid-row: 2;
+  }
+  .inputGroup5 {
+      grid-column: 1 / span 2;
+      grid-row: 3;
+  }
+  .inputGroup6 {
+      grid-column: 1 / span 2;
+      grid-row: 4;
+  }
+  .inputGroup7 {
+      grid-column: 2;
+      grid-row: 5;
+      text-align: right;
+  }
+
+
+.inputGroup__textfield {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    font-size: 13px;
+    padding: 20px;
+    border: 1px solid #FFF;
+    outline: 0;
+    border-radius: 0;
+    transition: border 0.3s ease-in-out;
+
+}
+  .inputGroup__textfield:focus, .inputGroup__textfield:active {
+      border: 1px solid #D9D9D9;
+  }
+
+
+.contactForm button {
+    padding: 20px;
+    width: 50%;
+    border: 0;
+    background: #000;
+    cursor: pointer;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+  button:hover {
+      box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.2);
+  }
+
+
+/* STYLES FOR VALIDATION WARNING */
+.hf-warning {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    transform: translate(-15%, -50%) !important;
+    background: orangered !important;
+    display: inline-block !important;
+    padding: 7px 14px !important;
+    color: #FFFFFF !important;
+    font-size: 11px !important;
+    font-family: sans-serif;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1) !important;
+    border: 0 !important;
+    border-radius: 2px !important;
+}
+
+  .hf-warning:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: orangered;
+      position: absolute;
+      z-index: 1;
+      bottom: -5px;
+      right: 15px;
+      transform: rotate(45deg);
+  }
+
+
+@media screen and (max-width: 480px) {
+    form {
+      display: flex !important;
+      flex-wrap: wrap;
+    }
+
+    form > div {
+      margin-bottom: 30px;
+    }
+}
+.contactForm {
+  width: calc(100% - 20px);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contactForm form {
+  width: 100%;
+  display: grid;
+  grid-gap: 30px;
+  padding-top: 20px;
+}
+
+.inputGroup {
+  width: 100%;
+  position: relative;
+}
+
+.inputGroup__textfield {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  font-size: 13px;
+  padding: 20px;
+  background-color: #1b1b1b; /* Background color */
+  color: #fff; /* Text color */
+  border: 1px solid #fff; /* Border color */
+  outline: 0;
+  border-radius: 0;
+  transition: border 0.3s ease-in-out;
+}
+
+.inputGroup__textfield::placeholder {
+  color: #fff; /* Placeholder color */
+}
+
+.inputGroup__textfield:focus,
+.inputGroup__textfield:active {
+  border: 1px solid #D9D9D9;
+}
+
+.contactForm button {
+  padding: 20px;
+  width: 50%;
+  border: 0;
+  background: #000;
+  cursor: pointer;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+button:hover {
+  box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+button i {
+  margin-left: 5px;
+}
+.inputGroup__textfield {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  font-size: 13px;
+  padding: 20px;
+  background-color: #1b1b1b; /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  outline: 0;
+  border-radius: 10px; /* Rounded corners */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.inputGroup__textfield::placeholder {
+  color: #fff; /* Placeholder color */
+}
+
+.inputGroup__textfield:focus,
+.inputGroup__textfield:active {
+  background-color: #252525; /* Change background color on focus/active */
 }
