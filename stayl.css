@@ -3,9 +3,8 @@ body {
   padding: 0;
   background-color: #000000;
   height: max-content;
-  
 }
-h4{
+h4 {
   color: #ff5114;
 }
 @font-face {
@@ -32,37 +31,77 @@ h4{
   src: url("Teko-Regular.ttf") format("truetype");
   /* Relative path to your font file */
 }
-.bold{
+.bold {
   font-family: b_bold, Arial, sans-serif !important;
-
 }
-.med{
+.med {
   font-family: b_med, Arial, sans-serif !important;
-
 }
-.reg{
+.reg {
   font-family: b_reg, Arial, sans-serif !important;
-
 }
 a {
   text-decoration: none;
 }
-.ffl{
+
+.font-4 {
+  font-weight: bold;
+  font-family: b_bold !important;
+  font-size: 20px;
+  color: #ff5114;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.font-5{
+  font-weight: bold;
+  font-family: b_bold;
+  color: #ff5114;
+}
+
+.font-6{
+  font-weight: bold;
+  font-family: b_bold;
+  font-size: 40px;
+  color: #ff5114;
+}
+
+.font-7{
+  font-weight: bold;
+  font-family: b_bold;
+  font-size: 50px;
+  color: #ff5114;
+
+}
+
+.ffl {
   display: flex !important;
   justify-content: center;
   flex-direction: column;
 }
+
+#text1{
+  font-size: 70px;
+
+}
+
 .branding {
+  /* text-wrap: balance; */
   text-align: center !important;
-  font-family: b_bold, Arial, sans-serif !important;
+  font-family: b_bold !important;
   color: #ff5114 !important;
-  font-size: 100px;
+  font-size: 50px;
   background-color: #000000;
   display: inline-block;
   /* Ensures each letter is animated individually */
   overflow: hidden;
-  
+
   /* Ensures text doesn't overflow container */
+}
+
+branding .mini-branding{
+  font-size: 70px;
 }
 
 .branding .text-wrapper {
@@ -89,6 +128,10 @@ a {
   line-height: 1em;
 }
 
+text{
+  text-wrap:nowrap;
+}
+
 /* .one{
     padding: 0;
     margin: 0;
@@ -107,61 +150,181 @@ a {
   padding-left: 10%;
 }
 
+
+.hero .same-hero{
+  width: 93%;
+}
+
+
+.hero .same-hero .mini-hero {
+  margin: 0%;
+  padding: 0%;
+}
+
+.hero .same-hero .mini-hero .micro-hero{
+  margin: 0%;
+  padding: 2px;
+}
+
+
 /* Gigs */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+.row > .column {
+  padding: 0 8px;
 }
 
-/* Create four equal columns that sits next to each other */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+  float: left;
+  width: 25%;
 }
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
   width: 100%;
-  transition: 1s;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); 
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+} 
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 400px;
+  background-color: transparent;
+  background-clip: none;
+  border: 0px;
 }
 
-.column img:hover {
-  opacity: 0.8;
-
-  transform: scale(1.1);
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-  .branding {
-    font-size: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 30px;
-  }
-  #pad{
-    padding-left: 1px !important;
-    padding-right: 1px !important;
-  }
-  .smal{
-    font-size: 20px !important;
-  }
+.mySlides {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
+
+
+.mySlides {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+/* .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+} */
+
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: transparent;
+  padding: 2px 16px;
+  color: white;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  /* background-color: black; */
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 
 /* end gigs */
 
@@ -174,28 +337,21 @@ a {
   padding: 0 8px;
 }
 
-
-
-.adc{
-width: 100%;
-margin: 0 ;
-padding: 0;
-}
-
-
-
-.adc .supp{
-margin: 0px;
-padding: 0px;
-
-}
-
-
-.adc .supp .logo-supp{
+.adc {
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
+.adc .supp {
+  margin: 0px;
+  padding: 0px;
+}
+
+.adc .supp .logo-supp {
+  margin: 0;
+  padding: 0;
+}
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -241,12 +397,12 @@ padding: 0px;
   background-color: #555;
 }
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
   .column {
     width: 100%;
     display: block;
   }
-}
+} */
 
 /* end about  */
 
@@ -255,8 +411,6 @@ padding: 0px;
 .zero {
   height: max-content;
 }
-
-
 
 .branding-text {
   font-family: "Arial", sans-serif;
@@ -283,32 +437,42 @@ padding: 0px;
 
 /* Add additional styles as needed */
 
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .branding .text-wrapper {
-    font-size:50px;
+    font-size: 50px;
   }
 }
 
-
-@media(max-width: 414px){
-
-.branding .text-wrapper{
-  font-size: 60px;
-}
-
-}
-
-@media(max-width: 430px){
-  .branding .text-wrapper{
+@media (max-width: 414px) {
+  .branding .text-wrapper {
     font-size: 60px;
   }
-  .smal span{
-    font-size: 40px !important;
-  }
 }
 
+@media (max-width: 430px) {
+  .branding .text-wrapper {
+    font-size: 32px;
+    text-wrap: balance  ;
+  }
+  .smal span {
+    font-size: 40px !important;
+  }
+} */
 
-@media (max-width: 1024px) {
+
+/* 
+@media only screen and (min-width: 1200px) {
+  .branding {
+    font-size: 79px;
+    width: 75%;
+  }
+  
+} */
+
+
+
+
+/* @media (max-width: 1024px) { */
   /* .branding .text-wrapper {
   position: relative;
   display: inline-block;
@@ -316,17 +480,11 @@ padding: 0px;
   padding-right: 0.05em;
   padding-bottom: 0.15em;
 } */
-
-  .branding {
-    font-size: 75px;
-    width: max-content;
-  }
-}
+/* } */
 .footer-section {
   background: #000;
   position: relative;
   padding-bottom: 30px;
- 
 }
 .footer-cta {
   border-bottom: 1px solid #000;
@@ -403,6 +561,11 @@ padding: 0px;
 .google-bg {
   background: #dd4b39;
 }
+.footer-widget{
+  width: 100%;
+  display: contents;
+}
+
 .footer-widget-heading h3 {
   color: #fff;
   font-size: 20px;
@@ -429,20 +592,23 @@ padding: 0px;
   color: #ff5e14;
 }
 .footer-widget ul li a {
-  color: #878787;
+  color: #fff;
   text-transform: capitalize;
 }
 .subscribe-form {
   position: relative;
   overflow: hidden;
+  width: 87%;
+  padding-bottom: 10px;
 }
 .subscribe-form input {
-  width: 100%;
-  padding: 14px 28px;
-  background: #2e2e2e;
-  border: 1px solid #2e2e2e;
-  color: #fff;
+    /* width: 100%; */
+    padding: 13px 20px;
+    background: #2e2e2e;
+    border: 1px solid #2e2e2e;
+    color: #fff;
 }
+
 .subscribe-form button {
   position: absolute;
   right: 0;
@@ -505,7 +671,6 @@ padding: 0px;
   line-height: 39px;
 }
 
-
 .social_icon {
   text-align: right;
   margin: 0;
@@ -517,7 +682,7 @@ padding: 0px;
 }
 .social_icon li a {
   display: inline-block;
-  background: #fff;
+  background:transparent;
   color: #000;
   text-align: center;
   border-radius: 100%;
@@ -537,7 +702,7 @@ padding: 0px;
 }
 .social_icon li:nth-child(3) a {
   background: transparent;
-  background: -moz-linear-gradient(
+  /* background: -moz-linear-gradient(
     45deg,
     #f09433 0%,
     #e6683c 25%,
@@ -560,162 +725,157 @@ padding: 0px;
     #dc2743 50%,
     #cc2366 75%,
     #bc1888 100%
-  );
+  ); */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
   color: #fff;
 }
-.color{
+.color {
   color: #ff5114;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .footer-widget {
     text-align: center; /* Center the content on small screens */
-   
-  }
-  .fd{
+  
+  .fd {
     flex-direction: column-reverse !important;
   }
-}
+ */
 .wider-hr {
   width: 100%; /* Adjust the width as needed */
   margin: 20px auto; /* Center the horizontal line */
   border: 1px solid #ccc; /* Optional: Add a border for visibility */
 }
-.color li a{
+.color li a {
   color: #ff5114 !important;
-  text-decoration: none  ;
+  text-decoration: none;
 }
-.color li a:hover{
+.color li a:hover {
   color: #ff5114 !important;
-  text-decoration: underline  ;
+  text-decoration: underline;
 }
 contactForm {
-    width: calc(100% - 20px);
-    max-width: 700px;
-    margin: 0 auto;
+  width: calc(100% - 20px);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* STYLES FOR FORM */
 .contactForm form {
-    width: 100%;
-    display: grid;
-    grid-gap: 30px;
-    padding-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-gap: 30px;
+  padding-top: 20px;
 }
 
 .inputGroup {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
 }
 
-  .inputGroup1 {
-      grid-column: 1;
-      grid-row: 1;
-  }
-  .inputGroup2 {
-      grid-column: 2;
-      grid-row: 1;
-  }
-  .inputGroup3 {
-      grid-column: 1;
-      grid-row: 2;
-  }
-  .inputGroup4 {
-      grid-column: 2;
-      grid-row: 2;
-  }
-  .inputGroup5 {
-      grid-column: 1 / span 2;
-      grid-row: 3;
-  }
-  .inputGroup6 {
-      grid-column: 1 / span 2;
-      grid-row: 4;
-  }
-  .inputGroup7 {
-      grid-column: 2;
-      grid-row: 5;
-      text-align: right;
-  }
-
+.inputGroup1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+.inputGroup2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.inputGroup3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+.inputGroup4 {
+  grid-column: 2;
+  grid-row: 2;
+}
+.inputGroup5 {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+.inputGroup6 {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+.inputGroup7 {
+  grid-column: 2;
+  grid-row: 5;
+  text-align: right;
+}
 
 .inputGroup__textfield {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    font-size: 13px;
-    padding: 20px;
-    border: 1px solid #FFF;
-    outline: 0;
-    border-radius: 0;
-    transition: border 0.3s ease-in-out;
-
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  font-size: 13px;
+  padding: 20px;
+  border: 1px solid #fff;
+  outline: 0;
+  border-radius: 0;
+  transition: border 0.3s ease-in-out;
 }
-  .inputGroup__textfield:focus, .inputGroup__textfield:active {
-      border: 1px solid #D9D9D9;
-  }
-
+.inputGroup__textfield:focus,
+.inputGroup__textfield:active {
+  border: 1px solid #d9d9d9;
+}
 
 .contactForm button {
-    padding: 20px;
-    width: 50%;
-    border: 0;
-    background: #000;
-    cursor: pointer;
-    color: #FFF;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 50%;
+  border: 0;
+  background: #000;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-  button:hover {
-      box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.2);
-  }
-
+button:hover {
+  box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.2);
+}
 
 /* STYLES FOR VALIDATION WARNING */
 .hf-warning {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    transform: translate(-15%, -50%) !important;
-    background: orangered !important;
-    display: inline-block !important;
-    padding: 7px 14px !important;
-    color: #FFFFFF !important;
-    font-size: 11px !important;
-    font-family: sans-serif;
-    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1) !important;
-    border: 0 !important;
-    border-radius: 2px !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  transform: translate(-15%, -50%) !important;
+  background: orangered !important;
+  display: inline-block !important;
+  padding: 7px 14px !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-family: sans-serif;
+  box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1) !important;
+  border: 0 !important;
+  border-radius: 2px !important;
 }
 
-  .hf-warning:after {
-      content: "";
-      width: 10px;
-      height: 10px;
-      background: orangered;
-      position: absolute;
-      z-index: 1;
-      bottom: -5px;
-      right: 15px;
-      transform: rotate(45deg);
+.hf-warning:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: orangered;
+  position: absolute;
+  z-index: 1;
+  bottom: -5px;
+  right: 15px;
+  transform: rotate(45deg);
+}
+
+/* @media screen and (max-width: 480px) {
+  form {
+    display: flex !important;
+    flex-wrap: wrap;
   }
 
-
-@media screen and (max-width: 480px) {
-    form {
-      display: flex !important;
-      flex-wrap: wrap;
-    }
-
-    form > div {
-      margin-bottom: 30px;
-    }
-}
+  form > div {
+    margin-bottom: 30px;
+  }
+} */
 .contactForm {
   width: calc(100% - 20px);
   max-width: 700px;
@@ -755,7 +915,7 @@ contactForm {
 
 .inputGroup__textfield:focus,
 .inputGroup__textfield:active {
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
 }
 
 .contactForm button {
@@ -764,7 +924,7 @@ contactForm {
   border: 0;
   background: #000;
   cursor: pointer;
-  color: #FFF;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: all 0.3s ease-in-out;
@@ -801,4 +961,4033 @@ button i {
 .inputGroup__textfield:focus,
 .inputGroup__textfield:active {
   background-color: #252525; /* Change background color on focus/active */
+}
+
+
+
+.top-about{
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.mid-about{
+  width: 100%;
+}
+
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* media Queries */
+
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+    .mid-nav{
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+    .mid-nav ul{
+  padding: 0px !important;
+  justify-content: space-between !important;
+    }
+ 
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+
+  #text2 span {
+    /* width: 100%; */
+    font-size: 35px !important;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+   background-color: transparent;
+ border: 0px;
+   
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    max-width: 1200px;
+  }
+
+
+  .under-nav  ul{
+    padding: 0%;}
+
+
+
+    .subscribe-form {
+      position: relative;
+      overflow: hidden;
+      width: 88%;
+      margin-left: 0px;
+  }
+  
+    .subscribe-form form  {
+      width: 79% !important;
+    }
+
+}
+@media (max-width: 1084px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+    .mid-nav{
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+    .mid-nav ul{
+  padding: 0px !important;
+  justify-content: space-between !important;
+    }
+
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 40px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+  .font-4{
+    font-size: 50px !important;
+  }
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 1064px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+    .mid-nav{
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+    .mid-nav ul{
+  padding: 0px !important;
+  justify-content: space-between !important;
+    }
+
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 40px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+  .font-4{
+    font-size: 50px !important;
+  }
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+
+@media (max-width: 1044px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+    .mid-nav{
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+    .mid-nav ul{
+  padding: 0px !important;
+  justify-content: space-between !important;
+    }
+
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 40px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+  .font-4{
+    font-size: 50px !important;
+  }
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+    .mid-nav{
+      padding-left: 4% !important;
+      padding-right: 5% !important;
+    }
+    .mid-nav ul{
+  padding: 0px !important;
+  justify-content: space-between !important;
+    }
+
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 35px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 37px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+  .font-4{
+    font-size: 50px !important;
+  }
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 1004px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 40px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+
+  .font-4{
+    font-size: 60px !important;
+  }
+
+}
+
+@media (max-width: 984px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 40px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+  .font-4{
+    font-size: 50px !important;
+  }
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 964px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+ 
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 38px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 944px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 37px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 924px) {
+  
+  
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 37px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+
+@media (max-width: 904px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 35px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 884px) {
+
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 30px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 864px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+ 
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 30px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+@media (max-width: 844px) {
+
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 28px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 824px) {
+ 
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 30px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+@media (max-width: 804px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 60px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 28px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 784px) {
+  
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  
+  .mid-nav{
+    padding-left: 1% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 40px !important;
+}
+
+#text1 span{
+  font-size: 55px;
+  letter-spacing: 0px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+ #title2{
+  font-size: 40px;
+ }
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+
+@media (max-width: 764px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 39px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+  .span-up{
+    font-size: 55px !important;
+  }
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 744px) {
+
+
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+  .span-up{
+    font-size: 55px !important;
+  }
+  
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 37px !important;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 724px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+ 
+  .span-up{
+    font-size: 55px !important;
+  }
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 36px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 704px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .span-up{
+    font-size: 55px !important;
+  }
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 36px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 684px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 35px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 55px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 664px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 34px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 55px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 644px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 33px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 53px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 624px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 31px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 53px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 604px) {
+  
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 30px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 53px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 584px) {
+
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+  .mid-nav{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 30px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 49px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+
+
+@media (max-width: 564px) {
+ 
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 22px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 49px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 524px) {
+  
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 27px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 44px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 504px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 27px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 44px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 484px) {
+  
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 25px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 40px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 464px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 26px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 38px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 444px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -23px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 3% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+ 
+  .text-about .follow-text-about{
+
+    margin-bottom: 1rem;
+    padding-left: 10px !important;
+
+
+  }
+
+.text-about{
+  margin: 0px!important;
+
+
+
+
+
+
+  padding-left: 29px!important ;
+  padding-right: 10px!important;
+}
+
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 23px !important;
+}
+
+#title2{
+  font-size: 39px;
+}
+
+.branding {
+  /* text-wrap: balance; */
+  text-align: center !important;
+  font-family: b_bold !important;
+  color: #ff5114 !important;
+  font-size: 20px;
+  background-color: #000000;
+  display: inline-block;
+  /* Ensures each letter is animated individually */
+  overflow: hidden;
+letter-spacing: 5px;
+  /* Ensures text doesn't overflow container */
+}
+.mid-con .column .col .text-b{
+margin-bottom: 0.2rem;
+font-size: 15px;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 36px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 424px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 22px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 33px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 404px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+ 
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 21px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 33px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 394px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 21px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 29px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 384px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 38px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 29px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 364px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+  
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 21px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 25px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 344px) {
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+
+ 
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 20px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 25px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 324px) {
+  
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+
+  
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 36px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 23px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+}
+
+@media (max-width: 310px) {
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 36px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 21px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+
+
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+}
+
+
+@media (max-width: 304px) {
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 36px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 20px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+ background-color: transparent;
+border: 0px;
+ 
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+
+
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+}
+
+@media (max-width: 284px) {
+  .mid-nav{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .mid-nav ul{
+padding: 0px !important;
+justify-content: space-between !important;
+  }
+  
+  .branding {
+    /* text-wrap: balance; */
+    text-align: center !important;
+    font-family: b_bold !important;
+    color: #ff5114 !important;
+    font-size: 20px;
+    background-color: #000000;
+    display: inline-block;
+    /* Ensures each letter is animated individually */
+    overflow: hidden;
+  letter-spacing: 5px;
+    /* Ensures text doesn't overflow container */
+  }
+  .mid-con .column .col .text-b{
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  }
+  .container, .container-sm {
+    max-width: none;
+}
+#text2 span {
+  /* width: 100%; */
+  font-size: 36px !important;
+}
+
+.font-4{
+  font-size: 50px !important;
+}
+
+.span-up{
+  font-size: 18px !important;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+background-color: transparent;
+border: 0px;
+
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+
+  background-color: transparent;
+ 
+  border: 0px;
+}
+
+
+
+.under-nav  ul{
+  padding: 0%;}
+
+
+
+  
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 0px;
+}
+
+  .subscribe-form form  {
+    width: 79% !important;
+  }
+
+
+  .nav-gigs .n-gigs{
+    padding: 0px !important;
+      }
+    
+      .nav-gigs .n-gigs a .logo{
+    margin-left: -31px !important;  }
+    
+    
+    .nav-gigs .n-gigs button{
+      margin-right:  16px !important;
+    }
+
+    .nav-gigs .follow-gigs .f-gigs img{
+     margin-left:-17px ; 
+
+
+    }
+
+}
+
+
+
+
+
+
+
+/* .banner-mid {
+  width: 100%;
+  font-family: b_bold !important;
+  color: #ff5114 !important;
+  text-align: center;
+  font-size: 49px;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+
+/* .banner-mid span {
+  width: 100%;
+  font-family: b_bold !important;
+  color: #ff5114 !important;
+  text-align: center;
+  font-size: 49px;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+@media (max-width: 768px) {
+  .banner {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    font-size: 1.2em;
+  }
 }
